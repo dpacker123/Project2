@@ -9,11 +9,11 @@ public class ShippingAddress {
     private String state;
     private String postalCode;
     
-    public String ShippingAddress{
-        var ShippingAddress = new ShippingAddress(addressLine1, 
-                city, state, postalCode);
-        ShippingAddress.add(addressLine2);
-    }
+    //public String ShippingAddress{
+     //   var ShippingAddress = new ShippingAddress(addressLine1,
+         //       city, state, postalCode);
+       // ShippingAddress.add(addressLine2);
+   // }
 
     private void add(String addressLine2) {
     }
@@ -23,15 +23,15 @@ public class ShippingAddress {
 
     }
 
-    public void toString(){
-        var inputReader = new Scanner(System.in);
-        while(true){
-            printMenu();
-            var userInput = inputReader.nextInt();
-            switch (userInput)
+   // public void toString(){
+      //  var inputReader = new Scanner(System.in);
+     //   while(true){
+          //  printMenu();
+         //   var userInput = inputReader.nextInt();
+         //   switch (userInput)
 
         }
 
-    }
+  //  }
 
-}
+//}

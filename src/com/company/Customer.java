@@ -7,5 +7,8 @@ public class Customer {
     private String name;
     private int customerID;
 
-    public Customer
+    public String getName() {
+        return null;
+    }
+
 }

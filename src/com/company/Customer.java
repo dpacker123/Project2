@@ -7,8 +7,17 @@ public class Customer {
     private String name;
     private int customerID;
 
-    public String getName() {
-        return null;
-    }
+    public Customer(String customerName, int custID){
+        customerID = custID;
+        name = customerName;
+        addresses = new ArrayList<ShippingAddress>();
 
+    }
+    public String getName(){
+        return name;
+    }
+    //public ShippingAddress addAddress() {
+      //  var newAddress = new ShippingAddress();
+       // newAddress.
+   // }
 }

@@ -13,22 +13,31 @@ public class Store {
    }
    public void runStore(){
       var userInput = new Scanner(System.in);
+      System.out.println("");
       while(true){
          Menu();
          var userChoice = userInput.nextInt();
          switch (userChoice){
             case 1:
                addCustomer(userInput);
-
-               break;
             case 2:
+               selectCustomer(userInput);
                break;
-            //case 3:
-              // break;
+            case 3:
+              break;
 
 
          }
       }
+   }
+
+   private void selectCustomer(Scanner userInput) {
+      userInput.nextLine();
+      System.out.println("Type the name of the customer you would like" +
+              "to select");
+      var selectCust = userInput.nextLine();
+      System.out.println("The customer " +selectCust + " Has been selected");
+
    }
 
    private void Menu() {
@@ -43,7 +52,7 @@ public class Store {
    private void addCustomer(Scanner userInput) {
       userInput.nextLine();
       System.out.println("Please type the name of the " +
-              "customer you wish to look up");
+              "customer you wish to add");
       var newCustomer = userInput.nextLine();
       Customers.add(newCustomer);
       System.out.println("Thank you for adding " +newCustomer+ " to the list");

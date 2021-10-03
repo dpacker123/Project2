@@ -1,16 +1,32 @@
 package com.company;
 
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
+
+
 public class Store {
+
+   private ArrayList<Customer> Customers;
    private ArrayList<Order> Orders;
-   private ArrayList<String> Customers;
 
-   public static void main(String[] args) {
-
+   public Store(){
+      Customers = new ArrayList<Customer>();
+      Orders = new ArrayList<Order>();
    }
+
+
+  public static void main(String[] args) throws IOException {
+      var filename = "Customers.txt";
+      List<String> test = Files.readAllLines(Paths.get(filename));
+
+
+  }
    public void runStore(){
       var userInput = new Scanner(System.in);
       System.out.println("");
@@ -38,10 +54,12 @@ public class Store {
       var selectCust = userInput.nextLine();
       System.out.println("The customer " +selectCust + " Has been selected");
 
+
    }
 
    private void Menu() {
       System.out.println("===========================================");
+      System.out.println("" + Customers );
       System.out.println("What would you like to do?");
       System.out.println("     [1] Add a new Customer");
       System.out.println("     [2] Select a Customer");
@@ -62,6 +80,8 @@ public class Store {
 
 
    }
+
+
 
 
 }

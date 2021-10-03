@@ -12,18 +12,21 @@ import java.util.Scanner;
 
 public class Store {
 
-   private ArrayList<Customer> Customers;
+   private ArrayList<String> Customers;
    private ArrayList<Order> Orders;
 
    public Store(){
-      Customers = new ArrayList<Customer>();
+      Customers = new ArrayList<String>();
       Orders = new ArrayList<Order>();
    }
 
 
   public static void main(String[] args) throws IOException {
       var filename = "Customers.txt";
-      List<String> test = Files.readAllLines(Paths.get(filename));
+      var getFile = Paths.get(filename);
+      ArrayList<List<String>> Customers  = new ArrayList<>();
+      var readall = Files.readAllLines(getFile);
+      Customers.add(readall);
 
 
   }

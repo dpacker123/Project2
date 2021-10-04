@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 
@@ -25,9 +24,8 @@ public class Store {
        // reading customer.txt into the customers array list (does not work)
       var filename = "Customers.txt";
       var getFile = Paths.get(filename);
-      ArrayList<List<String>> Customers  = new ArrayList<>();
-      var readall = Files.readAllLines(getFile);
-      Customers.add(readall);
+      var Customers = Files.readAllLines(getFile);
+      System.out.println("" + Customers);
 
 
   }
@@ -44,19 +42,23 @@ public class Store {
                selectCustomer(userInput);
                break;
             case 3:
-              break;
+              ManageCustomer();
+              case 4:
+                 break;
 
 
          }
       }
    }
 
-   private void selectCustomer(Scanner userInput) {
+   private String selectCustomer(Scanner userInput) {
       userInput.nextLine(); // eats \n from previous call to next int
       System.out.println("Type the name of the customer you would like" +
               "to select");
       var selectCust = userInput.nextLine(); // saves user input as a new variable
-      System.out.println("The customer " +selectCust + " Has been selected"); // this breaks the program :(
+      System.out.println("The customer " +selectCust + " Has been selected");
+      return selectCust;
+      // this breaks the program :(
 
 
    }
@@ -67,7 +69,8 @@ public class Store {
       System.out.println("What would you like to do?");
       System.out.println("     [1] Add a new Customer");
       System.out.println("     [2] Select a Customer");
-      System.out.println("     [3] Exit the program");
+      System.out.println("     [3] Manage a Customer");
+      System.out.println("     [4] Exit the program");
       System.out.println("===========================================");
    }
 
@@ -78,14 +81,42 @@ public class Store {
       var newCustomer = userInput.nextLine();//saves user input as new variabe
       Customers.add(newCustomer); // adds users input to customers array list
       System.out.println("Thank you for adding " +newCustomer+ " to the list");
+      System.out.println("Here is the updated list " + Customers);
 
 
 
 
 
    }
+   public void ManageCustomer(){
+       var userInput = new Scanner(System.in);
+       System.out.println("");
+       while(true){
+           secondMenu();
+           var userChoice = userInput.nextInt();
+           switch (userChoice){
+               case 1:
+                   break;
+               case 2:
+                   break;
+               case 3:
+                   break;
+           }
 
 
+
+       }
+   }
+
+    private void secondMenu() {
+       System.out.println("===================================");
+       System.out.println("Please select one of the following choices:");
+       System.out.println("     [1] Add an Address");
+       System.out.println("     [2] Make an order");
+       System.out.println("     [3] Go Back");
+       System.out.println("===================================");
+
+    }
 
 
 }
